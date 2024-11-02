@@ -13,14 +13,13 @@
 
     <?php
     // Database connection settings
-    $servername = "sql211.infinityfree.com";  // Your database server (e.g., localhost)
-    $username = "if0_37581499";  // Your database username
-    $password = "your_db_password";  // Your database password
-    $database = "if0_37581499_db_test";  // Your database name
-    $port = 3306;  // The port number to connect to the database (default is 3306)
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $database, $port);
+    $servername = "sql211.infinityfree.com";
+$mysql_port = 3306;
+$username = "if0_37581499";
+$password = "1Q1D8yKlA0ZODM";
+$dbname = "if0_37581499_db_test";
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname, $mysql_port);
 
     // Check connection
     if ($conn->connect_error) {
@@ -28,14 +27,14 @@
     }
 
     // Query to get products from the database
-    $sql = "SELECT name, price FROM products";
+    $sql = "SELECT Name, price FROM products";
     $result = $conn->query($sql);
 
     // Check if we have results and display each product in a card
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             echo '<div class="product-card">';
-            echo '<h2 class="product-name">' . htmlspecialchars($row['name']) . '</h2>';
+            echo '<h2 class="product-name">' . htmlspecialchars($row['Name']) . '</h2>';
             echo '<p class="product-price">$' . number_format($row['price'], 2) . '</p>';
             echo '</div>';
         }
