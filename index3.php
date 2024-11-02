@@ -24,5 +24,7 @@
     echo "The factorial of $number is $factorial";
     ?>
 
+    <p>Bye!</p>
+
 </body>
 </html>
