@@ -2,32 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PC Parts Recommendation</title>
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <p>My name is <?php echo "John Doe"; ?></p>
-    <p>Today is <?php echo date("Y-m-d"); ?></p>
-    <?php
-    function factorial($n) {
-        if ($n === 0) {
-            return 1;
-        } else {
-            return $n * factorial($n - 1);
-        }
-    }
 
-    $number = 5;
-    $factorial = factorial($number);
+<h2>PC Parts Recommendation Form</h2>
 
-    echo "The factorial of $number is $factorial";
-    ?>
+<form action="recommend.php" method="post">
+    <!-- Step 1: Type of Product -->
+    <label for="productType">Select the type of product you want to buy:</label><br>
+    <select id="productType" name="productType" required>
+        <option value="Computer Parts">Computer Parts</option>
+        <option value="Peripherals">Peripherals</option>
+        <option value="Prebuilt">Prebuilt</option>
+    </select>
+    <br><br>
 
-    <p>Bye!</p>
+    <!-- Step 2: Aim for Next Upgrade -->
+    <label for="upgradeAim">What do you aim for in your next upgrade?</label><br>
+    <select id="upgradeAim" name="upgradeAim" required>
+        <option value="Boost FPS">Boost FPS</option>
+        <option value="Improve Responsiveness">Improve Responsiveness</option>
+        <option value="Increase Storage">Increase Storage</option>
+    </select>
+    <br><br>
 
-    <h1>hahahah</h1>
+    <!-- Step 3: Budget -->
+    <label for="budget">Enter your budget (in USD):</label><br>
+    <input type="number" id="budget" name="budget" min="1" required>
+    <br><br>
 
+    <button type="submit">Get Recommendation</button>
+</form>
 
 </body>
 </html>
