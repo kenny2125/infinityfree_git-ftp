@@ -19,4 +19,4 @@ jobs:
         username: ${{ secrets.FTPUSERNAME }}  # Use secrets for security
         password: ${{ secrets.FTPPASSWORD }}  # Use secrets for security
       
-        server-dir: '/htdocs'  # The directory on the server to deploy to
+        server-dir: '/htdocs/'  # The directory on the server to deploy to
