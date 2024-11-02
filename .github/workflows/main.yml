@@ -18,5 +18,5 @@ jobs:
         server: ftp://ftpupload.net  # Your FTP server URL
         username: ${{ secrets.FTPUSERNAME }}  # Use secrets for security
         password: ${{ secrets.FTPPASSWORD }}  # Use secrets for security
-        local-dir: './'  # The local directory to deploy (can adjust as needed)
+      
         server-dir: '/htdocs'  # The directory on the server to deploy to
