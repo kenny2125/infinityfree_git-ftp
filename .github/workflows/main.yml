@@ -15,7 +15,7 @@ jobs:
     - name: FTP Deploy
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5  # Use the latest version available
       with:
-        server: ftp://ftpupload.net  # Your FTP server URL
+        server: ftpupload.net  # Your FTP server URL
         username: ${{ secrets.FTPUSERNAME }}  # Use secrets for security
         password: ${{ secrets.FTPPASSWORD }}  # Use secrets for security
       
