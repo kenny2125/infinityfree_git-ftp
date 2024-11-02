@@ -1,18 +1,22 @@
-on: push
-name: 🚀 Deploy website on push
+name: FTP Deploy
+
+on:
+  push:
+    branches:
+      - main  # Change this if you want to deploy from a different branch
+
 jobs:
-  web-deploy:
-    name: 🎉 Deploy
+  ftp-deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v3
-    
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+    - name: Checkout code
+      uses: actions/checkout@v2  # This checks out your repository code
+
+    - name: FTP Deploy
+      uses: SamKirkland/FTP-Deploy-Action@4.3.5  # Use the latest version available
       with:
-        server: ftpupload.net
-        username: ${{ secrets.FTPUSERNAME }}
-        password: ${{ secrets.FTPPASSWORD }}
-        protocol: ftps
-        server-dir: public_html/test-push-ftp/
+        server: ftp://ftpupload.net  # Your FTP server URL
+        username: ${{ secrets.FTP_USERNAME }}  # Use secrets for security
+        password: ${{ secrets.FTP_PASSWORD }}  # Use secrets for security
+        local-dir: './'  # The local directory to deploy (can adjust as needed)
+        server-dir: '/htdocs'  # The directory on the server to deploy to
