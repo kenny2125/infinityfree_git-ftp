@@ -6,6 +6,9 @@
 </head>
 <body>
 
+<h1>Testing</h1>
+
+
 <h2>PC Parts Recommendation Form</h2>
 
 <form action="recommend.php" method="post">
